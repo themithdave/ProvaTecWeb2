@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prova TecWeb 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  
+    function exibeElementoPorTag(tag){
+        $(tag).show();
+    }
+
+    function ocultaElementoPorTag(tag){
+        $(tag).hide();
+    }
+    
+    function ocultaElementoAtual(tag){
+        $(tag).hide();
+    }
+
+    function criaFormulario(){
+        var filhos=0;
+        for(var count = 0;count<=filhos;count++){
+         
+        var addForm = document.createElement('div', action="aula.php", method="GET", id="div-");
+       
+        addForm.innerHTML = `<Label>Nome do seu filho(a): <input type="text" name="nome1"placeholder="Digite o nome" id="nome1"></Label>
+        <input type="button" value="Adicionar" name="add" id="addForm" onclick="criaFormulario()"><br><br>
+    <Label>Idade do seu filho(a): <input type="text" name="idade1" placeholder="Digite a idade" id="idade1"> 
+        <input type="button" onclick="ocultaElementoPorTag('div')" type="button" value="Remover"></Label><br><br>
+`;
+    
+
+        document.getElementById("meuForm").appendChild(addForm);
+        
+    }   
+    div.action = 'aula.php'; 
+    method = 'GET';
+    }
+    
+   
+
+  
+  </script>
+</head>
+<body>
+<h1>Prova de TecWeb 2 </h1>
+   <form action="aula.php" method="GET" style="border: 1px solid gray; padding: 5px; margin-right: 1195px" id="meuForm"> 
+    <Label>Nome: <input type="text" name="nome"placeholder="Digite seu nome" id="nome"></Label><br><br>
+    <Label>Idade: <input type="text" placeholder="Digite sua idade" id="idade" name="idade"></Label><br><br>
+    <Label>Possui Filhos? <input type="radio"  onclick="exibeElementoPorTag('div')" name="child" value="Sim" id="choiceS"> Sim
+        <input type="radio" onclick="ocultaElementoPorTag('div')" name="child" value="Não" id="choiceN"> Não</Label>
+    <input type="submit" id="btnEnviar" value="Enviar" style="margin-left: 50px">
+    <br><br><br>
+    <div style="border: 1px solid gray; padding: 5px;" action="aula.php" method="GET" hidden>
+        <Label>Nome do seu filho(a): <input type="text" name="nomef"placeholder="Digite o nome" id=""></Label>
+        <input type="button" value="Adicionar" name="add" id="addForm" onclick="criaFormulario()"><br><br>
+    <Label>Idade do seu filho(a): <input type="text" name="idadef" placeholder="Digite a idade" id=""> 
+        <input type="button" onclick="ocultaElementoPorTag('div')" type="button" value="Remover"></Label><br><br>
+
+    </div>
+</form>
+    <Script src="controller.js"></Script>
+</body>
+</html>
